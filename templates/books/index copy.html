@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+    <p>Welcome to the CodeClan Library!</p>
+    <section> Please select 'Books' to begin </section>
+    <form action="/books/new" method="POST">
+        <div>
+            <input label="title" type="text" name="title" id="title" placeholder="Book name" required autofocus>
+            <label for="author">User:</label>
+            <select id="author" name="author_id">
+              {% for user in all_users %}
+                <option value="{{ author.id }}">{{ author.name }}</option>
+              {% endfor %}
+            </select>
+        </div>
+    </form>
+{% endblock content %}

@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block content %}
+    <p>Welcome to the CodeClan Library!</p>
+    <section> Please select 'Books' to begin </section>
+    {% for book in all_books %}
+        <div class="books">{{ book.title }}, {{ book.author.name }}</div> <form action="/books/{{ book.id }}/delete" method="POST"><button>DELETE</button></form>
+    {% endfor %}
+{% endblock content %}
